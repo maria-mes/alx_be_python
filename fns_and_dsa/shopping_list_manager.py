@@ -16,7 +16,7 @@ def main():
         return
 
     if choice == 1:
-        item = input("Enter item to add: ").strip()
+        item = input("Enter the item to add: ['\\']")
         shopping_list.append(item)
         print(f"{item} added to list.")
     elif choice == 2:

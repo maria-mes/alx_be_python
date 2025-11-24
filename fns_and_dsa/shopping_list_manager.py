@@ -1,6 +1,7 @@
 shopping_list = []
 
 def display_menu():
+    print("Shopping List Manager")
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
@@ -14,7 +15,6 @@ def main():
         print("Invalid input. Please enter a number.")
         return
 
-    # Minimal actions (enough for the checker). You can expand later.
     if choice == 1:
         item = input("Enter item to add: ").strip()
         shopping_list.append(item)

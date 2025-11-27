@@ -1,4 +1,4 @@
-from arithmetic_operations import perform_operation
+
 
 def main():
     print("Arithmetic Operations")
@@ -9,8 +9,7 @@ def main():
     result = perform_operation(num1, num2, operation)
     print(f"Result: {result}")
 
-if __name__ == "__main__":
-    main()
+
     
 def perform_operation(num1, num2, operation):
     if operation == "add":
@@ -25,3 +24,5 @@ def perform_operation(num1, num2, operation):
         return num1 / num2
     else:
         return "Error: Invalid operation"
+if __name__ == "__main__":
+    main()

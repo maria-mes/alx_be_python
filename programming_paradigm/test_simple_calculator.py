@@ -1,6 +1,6 @@
 import unittest
-import sys
 
+# Define the SimpleCalculator class directly in this file
 class SimpleCalculator:
     """A simple calculator class that supports basic arithmetic operations."""
 
@@ -18,7 +18,7 @@ class SimpleCalculator:
             return None
         return a / b
 
-
+# Unit tests for SimpleCalculator
 class TestSimpleCalculator(unittest.TestCase):
     def setUp(self):
         self.calc = SimpleCalculator()
@@ -26,23 +26,23 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_addition(self):
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
+        self.assertEqual(self.calc.add(0, 0), 0)
 
     def test_subtraction(self):
         self.assertEqual(self.calc.subtract(5, 3), 2)
         self.assertEqual(self.calc.subtract(0, 5), -5)
+        self.assertEqual(self.calc.subtract(-3, -2), -1)
 
     def test_multiplication(self):
         self.assertEqual(self.calc.multiply(4, 3), 12)
         self.assertEqual(self.calc.multiply(-2, 3), -6)
+        self.assertEqual(self.calc.multiply(0, 100), 0)
 
-    def test_division(self):
+    def test_divide(self):
         self.assertEqual(self.calc.divide(10, 2), 5)
-        self.assertIsNone(self.calc.divide(10, 0))
+        self.assertEqual(self.calc.divide(9, 3), 3)
+        self.assertIsNone(self.calc.divide(10, 0))  # division by zero
 
-
-def main():
-    # Run unit tests when executed directly
-    unittest.main(argv=[sys.argv[0]])
-
+# Run tests when executed directly
 if __name__ == "__main__":
-    main()
+    unittest.main()
